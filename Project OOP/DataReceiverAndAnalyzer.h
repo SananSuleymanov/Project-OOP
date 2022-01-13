@@ -17,7 +17,7 @@ private:
 	
 
 public:
-	void ReadData(HANDLE hcomm, char* SerialBuffer[]);
+	void ReadData(HANDLE hcomm);
 
 
 

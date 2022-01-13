@@ -125,9 +125,9 @@ int main(int argc, char* argv[])
 		
 		data.ReadData(hComm);
 
-		thread cr(&KeyboardReceiver::CommandReceive, key_command);
-		thread wd(&CommandSender::WriteData, command1, key_command.command, hComm, pcCommPort, dcbSerialParams);
-		thread da(&DataReceiverAndAnalyzer::ReadData, data, hComm);
+		static thread cr(&KeyboardReceiver::CommandReceive, key_command);
+		static thread wd(&CommandSender::WriteData, command1, key_command.command, hComm, pcCommPort, dcbSerialParams);
+		static thread da(&DataReceiverAndAnalyzer::ReadData, data, hComm);
 
 		cr.join();
 		wd.join();

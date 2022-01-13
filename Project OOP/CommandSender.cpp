@@ -1,6 +1,6 @@
 #include "CommandSender.h"
 
-const char* commands[6] = { "start", "stop", "break", "exit", "continue", "coursework"};
+
 
 void CommandSender::WriteData(char data[], HANDLE hcomm, const char* pcCommPort, DCB dcbSerialParams) {
 
@@ -17,7 +17,7 @@ void CommandSender::WriteData(char data[], HANDLE hcomm, const char* pcCommPort,
 
 	
 
-	cout << sendCommand;
+	cout << "\n"<< sendCommand;
 
 	Write_Status = SetCommState(hcomm, &dcbSerialParams);
 
@@ -35,17 +35,17 @@ void CommandSender::WriteData(char data[], HANDLE hcomm, const char* pcCommPort,
 
 	else {
 
-		cout << "\n bytes written to \n" << pcCommPort;
+		cout << "\n bytes written to " << pcCommPort <<"\n";
 	}
 
 
 	if (Write_Status == TRUE)
 	{
-		cout << data << " written to " << pcCommPort;
+		cout << data << " written to " << pcCommPort<<"\n";
 	}
 	else {
 
-		cout << "\n Error in writing to serial port" << GetLastError();
+		cout << "\n Error in writing to serial port" << GetLastError() <<"\n";
 	}
 	
 

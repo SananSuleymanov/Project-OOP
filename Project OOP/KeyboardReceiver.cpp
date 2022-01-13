@@ -4,11 +4,10 @@
 
 
 void KeyboardReceiver::CommandReceive() {
-	cout << "Enter command: \n";
-    cin.getline(command, COMMAND_LENGTH);
+	cout << "Enter command: ";
+    cin.getline(command, COMMAND_LENGTH) ;
 
 	
-
     
 }
 
@@ -21,3 +20,4 @@ int KeyboardReceiver::commandleng() {
 	return kom;
 
 }
+
